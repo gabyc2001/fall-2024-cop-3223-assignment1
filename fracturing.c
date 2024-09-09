@@ -1,27 +1,26 @@
-/*Gabriela A. Cardenas Sanchez UCFID
-COP 33454534
+/*Gabriela A. Cardenas Sanchez UCFID 5279693
+COP 3223
 Assignment 1
-September 07 2024*/
+September 08 2024*/
 
 #include <stdio.h>
 #include <math.h>
 
 #define PI 3.14159
 
-// Function prototypes
-double askForUserInput();
-double calculateDistance();
-double calculatePerimeter();
-double calculateArea();
-double calculateWidth();
-double calculateHeight();
-double computeDistance(double x1, double y1, double x2, double y2);  // Helper function for distance
 
-// Static variables to store user input and distance
+// Store user input and Distance
 static double point1_x, point1_y, point2_x, point2_y;
-static double distance;
+static double Distance;
 
-// Function to get user input for points
+
+// Function to ask user tor input
+/*Arguments: This function have no arguments.
+• Output: This function should output nothing.
+• Return: A double representing the user’s typed in value...
+this will attribute to the DRY method as mentioned earlier
+and can be applied to the previous functions.*/
+
 double askForUserInput() {
     printf("Enter values for Point 1 (x1, y1):\n");
     printf("x1: ");
@@ -35,72 +34,145 @@ double askForUserInput() {
     printf("y2: ");
     scanf("%lf", &point2_y);
 
-    return 0; // Not really needed, but must return a double
+    return 0;
 }
 
-// Helper function to calculate the distance between two points
-double computeDistance(double x1, double y1, double x2, double y2) {
+
+// Helper function to store the distance between two points
+double storeDistance(double x1, double y1, double x2, double y2) {
     return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
 }
 
-// Function to calculate the distance (diameter) between two points
+
+// Function to calculate the distance between two points
+/* • Arguments: This function have no arguments.
+   • Output: This function should output three lines of text.
+– Point #1 entered: x1 = -whatever was entered-; y1
+= -whatever was entered-
+– Point #2 entered: x2 = -whatever was entered-; y2
+= -whatever was entered-
+– The distance between the two points is -whatever is
+computed-
+    • Return: A double representing the distance.*/
+
 double calculateDistance() {
-    distance = computeDistance(point1_x, point1_y, point2_x, point2_y);
+    Distance = storeDistance(point1_x, point1_y, point2_x, point2_y);
 
     // Output
     printf("Point #1 entered: x1 = %.2lf; y1 = %.2lf\n", point1_x, point1_y);
     printf("Point #2 entered: x2 = %.2lf; y2 = %.2lf\n", point2_x, point2_y);
-    printf("The distance (diameter) between the two points is %.2lf\n", distance);
+    printf("The distance between the two points is %.2lf\n", Distance);
 
-    return distance;
+    return Distance;
 }
 
-// Function to calculate the perimeter (circumference) of the circle
+
+// Function to calculate the perimeter
+/*• Arguments: This function have no arguments.
+• Output: This function should output two lines of text.
+– Point #1 entered: x1 = -whatever was entered-; y1
+= -whatever was entered-
+– Point #2 entered: x2 = -whatever was entered-; y2
+= -whatever was entered-
+– The perimeter of the city encompassed by your request is -whatever is computed-
+• Return: A double indicating how difficult you found to
+do this function on a scale of 1.0 through 5.0 where 1 is
+easy and 5 is hard
+• Disclaimer: Must use a function (like calculateDistance)
+within to avoid repeating code.*/
+
 double calculatePerimeter() {
-    double perimeter = PI * distance;
+    double perimeter = PI * Distance;
 
     // Output
-    printf("The perimeter (circumference) of the circle is %.2lf\n", perimeter);
+    printf("Point #1 entered: x1 = %.2lf; y1 = %.2lf\n", point1_x, point1_y);
+    printf("Point #2 entered: x2 = %.2lf; y2 = %.2lf\n", point2_x, point2_y);
+    printf("The perimeter of the city encompassed by your request is %.2lf\n", perimeter);
 
-    return perimeter;
+    return 2.0;
 }
 
-// Function to calculate the area of the circle
+
+// Function to calculate area
+/*• Arguments: This function have no arguments.
+• Output: This function should output three lines of text
+– Point #1 entered: x1 = -whatever was entered-; y1
+= -whatever was entered-
+– Point #2 entered: x2 = -whatever was entered-; y2
+= -whatever was entered-
+– The area of the city encompassed by your request is
+-whatever is computed-
+• Return: A double indicating how difficult you found to
+do this function on a scale of 1.0 through 5.0 where 1 is
+easy and 5 is hard
+• Disclaimer: Must use a function (like calculateDistance)
+within to avoid repeating code.*/
+
 double calculateArea() {
-    double radius = distance / 2.0;
+    double radius = Distance / 2.0;
     double area = PI * pow(radius, 2);
 
     // Output
-    printf("The area of the circle is %.2lf\n", area);
+    printf("Point #1 entered: x1 = %.2lf; y1 = %.2lf\n", point1_x, point1_y);
+    printf("Point #2 entered: x2 = %.2lf; y2 = %.2lf\n", point2_x, point2_y);
+    printf("The area of the city encompassed by your request is %.2lf\n", area);
 
-    return area;
+    return 3.0;
 }
 
-// Function to calculate the width (diameter) of the circle
+
+// Function to calculate width
+/*• Arguments: This function have no arguments.
+• Output: This function should output three lines of text
+– Point #1 entered: x1 = -whatever was entered-; y1
+= -whatever was entered-
+– Point #2 entered: x2 = -whatever was entered-; y2
+= -whatever was entered-
+– The width of the city encompassed by your request
+is -whatever is computed-
+• Return: A double indicating how difficult you found to
+do this function on a scale of 1.0 through 5.0 where 1 is
+easy and 5 is hard*/
+
 double calculateWidth() {
+    
     // Output
-    printf("The width (diameter) of the circle is %.2lf\n", distance);
+    printf("Point #1 entered: x1 = %.2lf; y1 = %.2lf\n", point1_x, point1_y);
+    printf("Point #2 entered: x2 = %.2lf; y2 = %.2lf\n", point2_x, point2_y);
+    printf("The width of the city encompassed by your request is %.2lf\n", Distance);
 
-    return distance;
+    return 5.0;
 }
 
-// Function to calculate the height (diameter) of the circle
+// Function to calculate height
+/*• Arguments: This function have no arguments.
+• Output: This function should output three lines of text
+– Point #1 entered: x1 = -whatever was entered-; y1
+= -whatever was entered-
+– Point #2 entered: x2 = -whatever was entered-; y2
+= -whatever was entered-
+– The height of the city encompassed by your request
+is -whatever is computed-
+• Return: A double indicating how difficult you found to
+do this function on a scale of 1.0 through 5.0 where 1 is
+easy and 5 is hard*/
+
 double calculateHeight() {
-    // Output
-    printf("The height (diameter) of the circle is %.2lf\n", distance);
 
-    return distance;
+    // Output
+     printf("Point #1 entered: x1 = %.2lf; y1 = %.2lf\n", point1_x, point1_y);
+    printf("Point #2 entered: x2 = %.2lf; y2 = %.2lf\n", point2_x, point2_y);
+    printf("The height of the city encompassed by your request is %.2lf\n", Distance);
+
+    return 1.0;
 }
+
 
 // Main function
 int main(int argc, char **argv) {
-    // Get user input
+
     askForUserInput();
-
-    // Calculate distance
-    double dist = calculateDistance();
-
-    // Perform calculations and get results
+    double distance = calculateDistance();
     double perimeter = calculatePerimeter();
     double area = calculateArea();
     double width = calculateWidth();

@@ -10,7 +10,7 @@ September 08 2024*/
 
 
 // Store user input and Distance
-static double point1_x, point1_y, point2_x, point2_y;
+static double point1_x, point2_x, point1_y, point2_y;
 static double Distance;
 
 
@@ -22,15 +22,15 @@ this will attribute to the DRY method as mentioned earlier
 and can be applied to the previous functions.*/
 
 double askForUserInput() {
-    printf("Enter values for Point 1 (x1, y1):\n");
+    printf("Enter values for x1 and x2:\n");
     printf("x1: ");
     scanf("%lf", &point1_x);
-    printf("y1: ");
-    scanf("%lf", &point1_y);
-
-    printf("Enter values for Point 2 (x2, y2):\n");
     printf("x2: ");
     scanf("%lf", &point2_x);
+
+    printf("Enter values for y1 and y2:\n");
+    printf("y1: ");
+    scanf("%lf", &point1_y);
     printf("y2: ");
     scanf("%lf", &point2_y);
 
@@ -56,7 +56,7 @@ computed-
     • Return: A double representing the distance.*/
 
 double calculateDistance() {
-    Distance = storeDistance(point1_x, point1_y, point2_x, point2_y);
+    Distance = storeDistance(point1_x, point2_x, point1_y, point2_y);
 
     // Output
     printf("Point #1 entered: x1 = %.2lf; y1 = %.2lf\n", point1_x, point1_y);
